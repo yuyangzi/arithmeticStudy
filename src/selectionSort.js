@@ -1,5 +1,3 @@
-const sortTestHelper = require('./sortTestHelper');
-
 // 选择排序算法
 function selectionSort(Arr) {
   for (let i = 0; i < Arr.length; i++) {
@@ -14,11 +12,6 @@ function selectionSort(Arr) {
 
   return Arr;
 }
-
-const NumArr = sortTestHelper.generateRandomArray(10000, 100000, 200000000);
-
-sortTestHelper.testSort('selectionSort', selectionSort, [NumArr]);
-
-// const NumSort = selectionSort(NumArr);
-
-// console.log(NumSort);
+module.exports = {
+  selectionSort,
+}
