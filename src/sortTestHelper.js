@@ -10,6 +10,24 @@ const generateRandomArray = (n, rangeL, rangeR) => {
   return randomArr
 };
 
+// 生成一个近乎有序的数组
+const generateNearlyOrderedArray = (n, swapTimes) => {
+  // 首先生成一个有序的数组
+  const Arr = [];
+  for (let i = 0; i < n; i++) {
+    Arr[i] = i;
+  }
+
+  // 然后指定两个随机位置交换排序
+  for(let i = 0; i < swapTimes; i++) {
+    const posX = Math.floor(Math.random() * n);
+    const posY = Math.floor(Math.random() * n);
+    [Arr[posX], Arr[posY]] = [Arr[posY], Arr[posX]];
+  }
+
+  return Arr;
+}
+
 
 // 测试算法执行时间
 const testSort = (fnNname, fn, argument) => {
@@ -33,5 +51,6 @@ const isSort = (Arr) => {
 
 module.exports = {
   generateRandomArray,
+  generateNearlyOrderedArray,
   testSort,
 }
